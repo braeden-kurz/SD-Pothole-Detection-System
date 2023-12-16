@@ -1,0 +1,99 @@
+<mxfile host="app.diagrams.net" modified="2023-12-15T04:44:28.546Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="Tjie9mAIn3NFCCkGW6Yg" version="22.1.9" type="google">
+  <diagram name="Page-1" id="xZNIT3-YlOAzFzCg19pn">
+    <mxGraphModel grid="0" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kOnqnta4V5q0_elVNjnQ-3" value="&lt;h1&gt;Pothole Detection System Diagram&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-200" y="400" width="422.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-7" value="Raspberry Pi 3 B+" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="580" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-8" value="Central processing unit of the entire system" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-7">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-9" value="Contains TF-Lite model for detecting potholes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-7">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-10" value="Handles UART communication from GPS module" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-7">
+          <mxGeometry y="90" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-44" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="609.996923076923" as="sourcePoint" />
+            <mxPoint x="70" y="609.996923076923" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-11" value="GPS Module" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="580" width="140" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-12" value="Reads and processes GPS data from satellites&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-11">
+          <mxGeometry y="30" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-14" value="Uses pynmea2 to parse data into readable format and transmit to the RPi3B+ to log to device locally" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-11">
+          <mxGeometry y="80" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-15" value="Piezoelectric Buzzer" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="810" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-16" value="Simple buzzer component for alerting the user of incoming pothole" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-15">
+          <mxGeometry y="30" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gE8W9wSLCC1Pc1cNS5CY-20" target="gE8W9wSLCC1Pc1cNS5CY-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-30" y="500.0000000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-20" value="Picamera Module" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="460" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-21" value="Provides video streaming for pothole detection" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-20">
+          <mxGeometry y="30" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-46" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-120" y="610.0023076923076" as="sourcePoint" />
+            <mxPoint x="-70" y="610.0023076923076" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-24" value="Power Supply" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="580" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-25" value="Supply the system with 5V/2.5A via micro USB connector" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-24">
+          <mxGeometry y="30" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-28" value="Pothole Detection Algorithm" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="760" width="140" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-29" value="Processes video stream data to detect incoming potholes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-28">
+          <mxGeometry y="30" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-30" value="Uses quantized model for faster processing using integer values rather than floating point values" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-28">
+          <mxGeometry y="80" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-31" value="Mobilenet-ssd-v2 converted to TF-Lite for smaller systems with higher computational needs" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="gE8W9wSLCC1Pc1cNS5CY-28">
+          <mxGeometry y="160" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-38" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=elbowEdgeStyle;exitX=0.492;exitY=1.033;exitDx=0;exitDy=0;exitPerimeter=0;elbow=vertical;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="20.00000000000011" y="721.6500000000001" as="sourcePoint" />
+            <mxPoint x="21.12" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-39" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;edgeStyle=elbowEdgeStyle;exitX=0.492;exitY=1.033;exitDx=0;exitDy=0;exitPerimeter=0;elbow=vertical;" edge="1" parent="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-18.88" y="760" as="sourcePoint" />
+            <mxPoint x="-19.99999999999989" y="721.6500000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gE8W9wSLCC1Pc1cNS5CY-47" value="" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="gE8W9wSLCC1Pc1cNS5CY-9" target="gE8W9wSLCC1Pc1cNS5CY-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
